@@ -1,30 +1,17 @@
-* rae-dux
-| [[images/board-front.png]] | [[images/board-back.png]] |
+* fro-dux v1
+| [[images/fro_dux-v1_front.jpg]] | [[images/fro_dux-v1_back.jpg]] |
 
-The rae-dux is a 36-key (diodeless!), wireless keyboard inspired by the [[https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux][Architeuthis Dux]].
-This project used to use the [[https://github.com/soundmonster/samoklava][samoklava workflow]], however the auto-router had
-troubles with the splay, currently I just use the image generating parts of the
-samoklava workflow.
+This board is a fork and customization of the [[https://github.com/andrewjrae/rae-dux][rea-dux]], which is a 36-key (diodeless!), wireless keyboard inspired by the [[https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux][Architeuthis Dux]].
+You can find all relevant information there; this version would not exist without the others before :)
 
-*This has now been printed and is working perfectly with ZMK!*
-The ZMK shield can be found [[https://github.com/andrewjrae/zmk-config/tree/development/config/boards/shields/rae_dux][here]], as far as I can tell small custom projects
-like this aren't to be merged into ZMK main, so you'll have to emulate what I'm
-doing in my =zmk-config= [[https://github.com/andrewjrae/zmk-config/tree/development/config][here]].
+I primarily changed the routing of the tracks, being inspired by the original [[https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux][Architeuthis dux]] and moved the thumb-cluster more to the center.
+The creator of the Architeuthis dux seems to have the awesome logo from "perce", so thank you also from my site! I could not find out who it is, maybe [[https://github.com/madebyperce/][this person]].
 
-** Build Guide
-The wonderful @tzcl created a [[https://www.tzcl.me/blog/rae-dux][build guide]] for the rae-dux, so if you are curious
-about building the board, but don't have experience with this sort of thing go
-check it out!
+You can find further information in the rae-dux repo.
+If you want to change something on this board, just edit 'fro_dux-v1.kicad_pcb' in KiCad and export your own gerber file.
 
-** Important Notes
-- *Wireless only*, the 36-key diodeless approach uses the P0 pin which is usually dedicated to TRRS
-- Since I ended up largely ditching the samoklava workflow, *the actions page with gerbers is out of date and no longer relevant**
-- Their is only one MCU footprint, so *one controller has to be flipped* (I assume
-   if you can get this printed you can figure out the correct orientation)
-- The [[./rae-dux.yaml][rae-dux.yaml]] file relies on [[https://github.com/andrewjrae/ergogen/tree/rae-dux][my fork of ergogen]] which naturally relies on
-  [[https://github.com/soundmonster/ergogen/tree/samoklava][soundmonster's fork of ergogen]], and a simple JST battery footprint inspired by
-  [[https://github.com/benvallack][@benvallack]].
-- If you want to skip out on the switch, there is no jumper to use the JST
-  connector, so you'll have to bodge a wire somewhere, or try shorting the
-  switch footprint.
-- Kicad files are 6.0, so unfortunately not backwards compatible.
+Note, if you want to print it:
+
+- There is only one file for both sides. Typically PCB manufacturers offer to print only more than 5 boards of one file, so the idea is to flip one board around and have the right side. I tried to make the design on both sides as similar as possible.
+- If you edit the KiCAD file and export your finished version as a gerber, make sure to check "Subtract soldermask from silkscreen", so that you can solder everything together when your board arrives.
+- The silkscreen currently overflows the whole keyboard as I could not find a good solution to cut the overflow. If you know how to do that, let me know :)

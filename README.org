@@ -1,4 +1,7 @@
 * fro-dux v1
+
+[[images/fro_dux-v1.jpeg]]
+
 | [[images/fro_dux-v1_front.jpg]] | [[images/fro_dux-v1_back.jpg]] |
 
 This board is a fork and customization of the [[https://github.com/andrewjrae/rae-dux][rea-dux]], which is a 36-key (diodeless!), wireless keyboard inspired by the [[https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux][Architeuthis Dux]].
@@ -15,3 +18,4 @@ Note, if you want to print it:
 - There is only one file for both sides. Typically PCB manufacturers offer to print only more than 5 boards of one file, so the idea is to flip one board around and have the right side. I tried to make the design on both sides as similar as possible.
 - If you edit the KiCAD file and export your finished version as a gerber, make sure to check "Subtract soldermask from silkscreen", so that you can solder everything together when your board arrives.
 - The silkscreen currently overflows the whole keyboard as I could not find a good solution to cut the overflow. If you know how to do that, let me know :)
+- Check out my [[https://github.com/frodew/zmk_config][zmk-config]] for how you could configure ZMK to work on this keyboard.
